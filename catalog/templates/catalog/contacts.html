@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+</head>
+<body>
+    <H1>
+        Контактики
+    </H1>
+    <p>
+        <a href="/">Главная</a>
+    </p>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Имя</label>
+            <input name="name" type="text">
+        </p>
+        <p>
+            <label>Email</label>
+            <input name="email" type="email">
+        </p>
+        <button type="submit">Послать</button>
+    </form>
+</body>
+</html>

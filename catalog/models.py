@@ -10,7 +10,7 @@ class Category(models.Model):
     description = models.TextField(verbose_name='Описание', **NULLABLE)
 
     def __str__(self):
-        return f'{self.caption}'
+        return f'{self.id} {self.caption}'
 
     class Meta:
         verbose_name = 'Категория'
@@ -26,7 +26,6 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name='Цена')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата последнего изменения')
-    manufactured_at = models.DateTimeField(**NULLABLE)
 
     def __str__(self):
         return f'{self.caption} ({self.category}) : {self.price}'

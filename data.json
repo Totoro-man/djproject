@@ -1,0 +1,78 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "caption": "Продукты питания",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "caption": "Хозяйственные товары",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "caption": "Спортивные товары",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "caption": "Хлеб",
+      "description": "Всему голова",
+      "view": "",
+      "category": 1,
+      "price": 100,
+      "created_at": "2024-05-12T21:00:42.973Z",
+      "updated_at": "2024-05-12T21:00:42.973Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "caption": "Мыло",
+      "description": "Первая вещь",
+      "view": "",
+      "category": 2,
+      "price": 1000,
+      "created_at": "2024-05-12T21:02:15.659Z",
+      "updated_at": "2024-05-12T21:02:15.659Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "caption": "Веревка",
+      "description": "Вторая вещь",
+      "view": "",
+      "category": 2,
+      "price": 1000,
+      "created_at": "2024-05-12T21:02:41.905Z",
+      "updated_at": "2024-05-12T21:02:41.905Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "caption": "Турник домашний",
+      "description": "Сюда крепить вторую вещь",
+      "view": "",
+      "category": 3,
+      "price": 10000,
+      "created_at": "2024-05-12T21:04:01.147Z",
+      "updated_at": "2024-05-12T21:04:01.147Z"
+    }
+  }
+]

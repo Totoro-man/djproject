@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Homepage</title>
-</head>
-<body>
-    <H1>
-        Дратуйти
-    </H1>
-    <p>
-        <a href="contacts/">Контакты</a>
-    </p>
-</body>
-</html>
+{% extends  'catalog/base.html' %}
+{% block content%}
+    <div class="row h-md-250 position-relative m-auto">
+        <h1>Про что весь этот бардак? </h1>
+        <p class="lead">Да я пока и сам ХЗ</p>
+        <p class="lead">
+            <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
+        </p>
+    </div>
+{% endblock %}

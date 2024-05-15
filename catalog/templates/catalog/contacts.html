@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contacts</title>
-</head>
-<body>
-    <H1>
-        Контактики
-    </H1>
-    <p>
-        <a href="/">Главная</a>
-    </p>
+{% extends  'catalog/base.html' %}
+{% block content%}
     <form method="POST">
         {% csrf_token %}
         <p>
@@ -23,5 +12,4 @@
         </p>
         <button type="submit">Послать</button>
     </form>
-</body>
-</html>
+{% endblock %}

@@ -1,9 +1,13 @@
 {% extends  'catalog/base.html' %}
+{% load view_path %}
 {% block content%}
 {% for object in object_list %}
 <div class="col">
     <div class="card shadow-sm">
         <div class="card-body">
+            <div class="col-auto d-none d-lg-block">
+                <img class="card-img-top" src="{{ object.view| view_path }}">
+            </div>
             <h3>{{object.caption}}</h3>
             <p class="card-text">{{object.description}}</p>
             <div class="d-flex justify-content-between align-items-center">

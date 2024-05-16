@@ -1,5 +1,6 @@
 {% extends  'catalog/base.html' %}
 {% load view_path %}
+{% load cut_length %}
 {% block content%}
 {% for object in object_list %}
 <div class="col">
@@ -9,7 +10,7 @@
                 <img class="card-img-top" src="{{ object.view| view_path }}">
             </div>
             <h3>{{object.caption}}</h3>
-            <p class="card-text">{{object.description}}</p>
+            <p class="card-text">{{object.description| cut_length:100}}</p>
             <div class="d-flex justify-content-between align-items-center">
                 <form action="/product_info/" method="POST">
                     {% csrf_token %}

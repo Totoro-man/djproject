@@ -1,16 +1,24 @@
 {% extends  'catalog/base.html' %}
 {% load view_path %}
+{% load cut_length %}
 {% block content%}
-<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative m-auto">
-    <div class="col p-4 d-flex flex-column position-static m-auto">
-        <h3 class="mb-1">{{ object_list.caption }}</h3>
-        <div class="mb-3">( {{ object_list.category.caption }} )</div>
-        <p class="card-text mb-auto">{{ object_list.description }}</p>
-        <h3 class="mb-0">цена: {{ object_list.price }} р.</h3>
-    </div>
-    <div class="col-auto d-none d-lg-block">
-        <img class="card-img-top" src="{{ object_list.view| view_path }}">
+<div class="row mt-3">
+    <div class="col-3">
+        <div class="card">
+            <img class="card-img-top " src="{{ object_list.view| view_path }}">
+            <div class="card-body">
+                <h3 class="card-title">{{object_list.caption}}</h3>
+                <p class="card-text">{{object_list.description| cut_length:100}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <form action="/product_info/" method="POST">
+                        {% csrf_token %}
+                        <input class="d-none" name="product_id" value="{{object_list.id}}">
+                        <button type="submit" class="btn btn-sm btn-outline-secondary">Изменить</button>
+                    </form>
+                    <small class="text-body-secondary">{{object.price}}</small>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
 {% endblock %}

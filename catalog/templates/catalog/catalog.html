@@ -2,25 +2,33 @@
 {% load view_path %}
 {% load cut_length %}
 {% block content%}
-{% for object in object_list %}
-<div class="col">
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <div class="col-auto d-none d-lg-block">
-                <img class="card-img-top" src="{{ object.view| view_path }}">
-            </div>
-            <h3>{{object.caption}}</h3>
-            <p class="card-text">{{object.description| cut_length:100}}</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <form action="/product_info/" method="POST">
-                    {% csrf_token %}
-                    <input class="d-none" name="product_id" value="{{object.id}}">
-                    <button type="submit" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-                </form>
-                <small class="text-body-secondary">{{object.price}}</small>
-            </div>
-        </div>
+
+<div class="row mt-3">
+    <div class="col">
+        <button type="button" class="btn btn-primary">Добавить продукт</button>
     </div>
 </div>
-{% endfor %}
+
+<div class="row mt-3">
+    {% for object in object_list %}
+        <div class="col">
+            <div class="card">
+                <img class="card-img-top " src="{{ object.view| view_path }}">
+                <div class="card-body">
+                    <h3 class="card-title">{{object.caption}}</h3>
+                    <p class="card-text">{{object.description| cut_length:100}}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <form action="/product_info/" method="POST">
+                            {% csrf_token %}
+                            <input class="d-none" name="product_id" value="{{object.id}}">
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                        </form>
+                        <small class="text-body-secondary">{{object.price}}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
